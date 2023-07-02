@@ -12,3 +12,10 @@ function subtract(a, b) {
   b = (typeof b == 'number') ? b : parseInt(b);
   return a - b;
 }
+
+// multiply(a, b) multiplies two numbers
+function multiply(a, b) {
+  a = (typeof a == 'number') ? a : parseInt(a);
+  b = (typeof b == 'number') ? b : parseInt(b);
+  return a * b;
+}
