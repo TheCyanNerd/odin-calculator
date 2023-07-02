@@ -1,3 +1,4 @@
+// ARITHMETIC FUNCTIONS
 
 // add(a, b) takes numbers (or number Strings) and adds them
 function add(a, b) {
@@ -24,6 +25,8 @@ function divide(a, b) {
   return parseFloat(a) / b;
 }
 
+
+// DISPLAY VARS
 
 let firstNum;
 let operator;
