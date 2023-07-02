@@ -19,3 +19,14 @@ function multiply(a, b) {
   b = (typeof b == 'number') ? b : parseInt(b);
   return a * b;
 }
+
+// divide(a, b) divides a by b
+//   checks for division by zero, returns an error msg directly if caught
+function divide(a, b) {
+  a = (typeof a == 'number') ? a : parseInt(a);
+  b = (typeof b == 'number') ? b : parseInt(b);
+  if(b === 0) {
+    return 'BOOM';
+  }
+  return a / b;
+}
