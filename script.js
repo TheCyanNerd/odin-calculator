@@ -31,3 +31,29 @@ function divide(a, b) {
 let firstNum;
 let operator;
 let secondNum;
+
+
+// CALCULATOR FUNCTIONS
+
+// operate(first, op, second) takes in two numbers and an operator,
+//    then calls the corresponding arithmetic function
+function operate(first, op, second) {
+  let result;
+  switch (op) {
+    case '+':
+      result = add(first, second);
+      break;
+    case '-':
+      result = subtract(first, second);
+      break;
+    case '*':
+      result = multiply(first, second);
+      break;
+    case '/':
+      result = divide(first, second);
+      break;
+    default:
+      break;
+  }
+  return result;
+}
