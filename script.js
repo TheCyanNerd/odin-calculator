@@ -23,3 +23,8 @@ function divide(a, b) {
   }
   return parseFloat(a) / b;
 }
+
+
+let firstNum;
+let operator;
+let secondNum;
