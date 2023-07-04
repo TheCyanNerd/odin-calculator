@@ -33,4 +33,19 @@ body {
 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2em;
+
+  color: black;
+}
+
+#btn-decimal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#point {
+  background-color: black;
+  width: 0.3em;
+  height: 0.3em;
+  border-radius: 1em;
 }
