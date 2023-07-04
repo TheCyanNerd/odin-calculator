@@ -10,3 +10,10 @@ body {
   width: 25em;
   height: 35em;
 }
+
+#digits {
+  height: 75%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
