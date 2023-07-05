@@ -2,17 +2,17 @@
 
 // add(a, b) takes numbers (or number Strings) and adds them
 function add(a, b) {
-  return parseFloat(a) + parseFloat(b);
+  return round(parseFloat(a) + parseFloat(b));
 }
 
 // subtract(a, b) takes numbers (or number Strings) and returns their difference
 function subtract(a, b) {
-  return parseFloat(a) - parseFloat(b);
+  return round(parseFloat(a) - parseFloat(b));
 }
 
 // multiply(a, b) multiplies two numbers
 function multiply(a, b) {
-  return parseFloat(a) * parseFloat(b);
+  return round(parseFloat(a) * parseFloat(b));
 }
 
 // divide(a, b) divides a by b
@@ -22,7 +22,12 @@ function divide(a, b) {
   if(b === 0) {
     return 'BOOM';
   }
-  return parseFloat(a) / b;
+  return round(parseFloat(a) / b);
+}
+
+// round(num) returns num rounded to two decimal places
+function round(num) {
+  return Math.round(num * 100) / 100;
 }
 
 
