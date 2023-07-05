@@ -72,3 +72,8 @@ let updateDisplay = function() {
   displayContent.innerText = displayString;
 }
 
+// writeButtonToDisplay allows an element to append its content to the display when used as a callback function
+let writeButtonToDisplay = function() {
+  displayText += this.innerText;
+  updateDisplay();
+}
