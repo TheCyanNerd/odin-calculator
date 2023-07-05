@@ -115,7 +115,7 @@ let equalsFunction = function() {
 
     // visually deselect the operator
     const operators = document.querySelectorAll('.op');
-    operators.forEach((item) => item.classList.remove('.selected'));
+    operators.forEach((item) => item.classList.remove('selected'));
   }
 }
 
