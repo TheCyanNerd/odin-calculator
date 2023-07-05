@@ -59,3 +59,14 @@ function operate(first, op, second) {
   }
   return result;
 }
+
+
+
+
+
+// BUTTON FUNCTIONS
+
+let updateDisplay = function() {
+  const displayContent = document.querySelector('#display-content');
+  displayContent.innerText = displayString;
+}
