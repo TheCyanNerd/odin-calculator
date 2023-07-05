@@ -103,6 +103,28 @@ operators.forEach((button) => {
   button.addEventListener('click', selectOperator);
 })
 
+// deselectOperator unselects operator visually and in storage
+let deselectOperator = function() {
+  const operators = document.querySelectorAll('.op');
+  operators.forEach((item) => item.classList.remove('selected'));
+
+  operator = "";
+}
+
+// clearCalculator wipes out all existing data and empties the display
+let clearCalculator = function() {
+  firstNum = "";
+  secondNum = "";
+
+  displayString = "";
+  updateDisplay();
+
+  deselectOperator();
+}
+
+const clear = document.querySelector('#btn-clear');
+clear.addEventListener('click', clearCalculator);
+
 // equalsFunction handles everything that occurs after pressing the equals sign
 let equalsFunction = function() {
   if(!firstNum || !operator) {
@@ -115,12 +137,10 @@ let equalsFunction = function() {
 
     // update data vars
     firstNum = parseFloat(displayString);
-    operator = "";
     secondNum = "";
 
-    // visually deselect the operator
-    const operators = document.querySelectorAll('.op');
-    operators.forEach((item) => item.classList.remove('selected'));
+    // deselect the operator
+    deselectOperator();
   }
 }
 
