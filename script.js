@@ -66,7 +66,9 @@ function operate(first, op, second) {
 
 // BUTTON FUNCTIONS
 
+// updateDisplay replaces current contents of display with the contents of displayString
 let updateDisplay = function() {
   const displayContent = document.querySelector('#display-content');
   displayContent.innerText = displayString;
 }
+
