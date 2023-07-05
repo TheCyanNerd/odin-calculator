@@ -77,3 +77,8 @@ let writeButtonToDisplay = function() {
   displayString += this.innerText;
   updateDisplay();
 }
+
+const digits = document.querySelectorAll('.digit');
+digits.forEach((button) => {
+  button.addEventListener('click', writeButtonToDisplay)
+});
