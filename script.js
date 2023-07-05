@@ -32,6 +32,8 @@ let firstNum;
 let operator;
 let secondNum;
 
+let displayString;
+
 
 // CALCULATOR FUNCTIONS
 
