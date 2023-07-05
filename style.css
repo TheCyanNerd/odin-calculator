@@ -7,9 +7,6 @@ body {
 
 
 #calculator {
-  display: flex;
-  align-items: flex-end;
-
   background-color: rgb(44, 42, 42);
   width: 25em;
   height: 35em;
@@ -17,8 +14,15 @@ body {
   padding: 1em;
 }
 
+#btn-main {
+  display: flex;
+  align-items: flex-end;
+
+  height: 60%;
+}
+
 #digits {
-  height: 75%;
+  height: 100%;
   width: 70%;
 
   display: grid;
@@ -31,7 +35,7 @@ body {
   display: grid;
   grid-template-columns: auto;
 
-  height: 75%;
+  height: 100%;
   width: 30%;
 
   margin-left: 0.5em;
@@ -41,6 +45,7 @@ body {
 
 #bottom-row {
   display: flex;
+  height: 15%;
 }
 
 
