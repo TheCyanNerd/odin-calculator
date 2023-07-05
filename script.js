@@ -82,3 +82,18 @@ const digits = document.querySelectorAll('.digit');
 digits.forEach((button) => {
   button.addEventListener('click', writeButtonToDisplay)
 });
+
+// selectOperator saves the current display value and picks an operator
+//   to use for the next calculation
+let selectOperator = function() {
+  this.classList.add('selected');
+  operator = this.innerText;
+
+  firstNum = parseFloat(displayString);
+  displayString = "";
+}
+
+const operators = document.querySelectorAll('.op');
+operators.forEach((button) => {
+  button.addEventListener('click', selectOperator);
+})

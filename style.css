@@ -107,3 +107,8 @@ body {
 #btn-equals {
   flex: 0 0 58%;
 }
+
+
+.selected {
+  border: 2px solid red;
+}
