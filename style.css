@@ -18,6 +18,23 @@ body {
   padding: 1em;
 }
 
+#display {
+  background-color: grey;
+  text-align: right;
+
+  height: 20%;
+  margin: 0 0.5em 1.5em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#display-content {
+  font-size: 4em;
+  padding: 0.25em;
+}
+
 #btn-main {
   display: flex;
   align-items: flex-end;
