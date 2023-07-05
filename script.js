@@ -97,3 +97,27 @@ const operators = document.querySelectorAll('.op');
 operators.forEach((button) => {
   button.addEventListener('click', selectOperator);
 })
+
+// equalsFunction handles everything that occurs after pressing the equals sign
+let equalsFunction = function() {
+  if(!firstNum || !operator) {
+    // do nothing
+  } else {
+    // perform the operation
+    secondNum = parseFloat(displayString);
+    displayString = operate(firstNum, operator, secondNum);
+    updateDisplay();
+
+    // update data vars
+    firstNum = parseFloat(displayString);
+    operator = "";
+    secondNum = "";
+
+    // visually deselect the operator
+    const operators = document.querySelectorAll('.op');
+    operators.forEach((item) => item.classList.remove('.selected'));
+  }
+}
+
+const equals = document.querySelector('#btn-equals');
+equals.addEventListener('click', equalsFunction);
