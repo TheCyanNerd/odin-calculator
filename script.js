@@ -32,7 +32,7 @@ let firstNum;
 let operator;
 let secondNum;
 
-let displayString;
+let displayString = "";
 
 
 // CALCULATOR FUNCTIONS
