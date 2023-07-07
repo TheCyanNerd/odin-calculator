@@ -66,11 +66,21 @@ let secondNum;
 let displayString = "";
 
 
+// CALCULATOR ELEMENTS
+
+const displayContent = document.querySelector('#display-content');
+
+const operators = document.querySelectorAll('.op');
+const digits = document.querySelectorAll('.digit');
+
+const clear = document.querySelector('#btn-clear');
+const equals = document.querySelector('#btn-equals');
+
+
 // BUTTON FUNCTIONS
 
 // updateDisplay replaces current contents of display with the contents of displayString
 let updateDisplay = function() {
-  const displayContent = document.querySelector('#display-content');
   displayContent.innerText = displayString;
 }
 
@@ -92,9 +102,7 @@ let selectOperator = function() {
 
 // deselectOperator unselects operator visually and in storage
 let deselectOperator = function() {
-  const operators = document.querySelectorAll('.op');
   operators.forEach((item) => item.classList.remove('selected'));
-
   operator = "";
 }
 
@@ -132,18 +140,13 @@ let equalsFunction = function() {
 
 // BUTTON EVENT LISTENERS
 
-const digits = document.querySelectorAll('.digit');
 digits.forEach((button) => {
   button.addEventListener('click', writeButtonToDisplay)
 });
 
-const operators = document.querySelectorAll('.op');
 operators.forEach((button) => {
   button.addEventListener('click', selectOperator);
 })
 
-const clear = document.querySelector('#btn-clear');
 clear.addEventListener('click', clearCalculator);
-
-const equals = document.querySelector('#btn-equals');
 equals.addEventListener('click', equalsFunction);
