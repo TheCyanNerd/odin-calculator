@@ -31,15 +31,6 @@ function round(num) {
 }
 
 
-// DISPLAY VARS
-
-let firstNum;
-let operator;
-let secondNum;
-
-let displayString = "";
-
-
 // CALCULATOR FUNCTIONS
 
 // operate(first, op, second) takes in two numbers and an operator,
@@ -66,7 +57,13 @@ function operate(first, op, second) {
 }
 
 
+// CALCULATOR VARS
 
+let firstNum;
+let operator;
+let secondNum;
+
+let displayString = "";
 
 
 // BUTTON FUNCTIONS
