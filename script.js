@@ -83,11 +83,6 @@ let writeButtonToDisplay = function() {
   updateDisplay();
 }
 
-const digits = document.querySelectorAll('.digit');
-digits.forEach((button) => {
-  button.addEventListener('click', writeButtonToDisplay)
-});
-
 // selectOperator saves the current display value and picks an operator
 //   to use for the next calculation
 let selectOperator = function() {
@@ -97,11 +92,6 @@ let selectOperator = function() {
   firstNum = parseFloat(displayString);
   displayString = "";
 }
-
-const operators = document.querySelectorAll('.op');
-operators.forEach((button) => {
-  button.addEventListener('click', selectOperator);
-})
 
 // deselectOperator unselects operator visually and in storage
 let deselectOperator = function() {
@@ -122,9 +112,6 @@ let clearCalculator = function() {
   deselectOperator();
 }
 
-const clear = document.querySelector('#btn-clear');
-clear.addEventListener('click', clearCalculator);
-
 // equalsFunction handles everything that occurs after pressing the equals sign
 let equalsFunction = function() {
   if(!firstNum || !operator) {
@@ -143,6 +130,23 @@ let equalsFunction = function() {
     deselectOperator();
   }
 }
+
+
+
+// BUTTON EVENT LISTENERS
+
+const digits = document.querySelectorAll('.digit');
+digits.forEach((button) => {
+  button.addEventListener('click', writeButtonToDisplay)
+});
+
+const operators = document.querySelectorAll('.op');
+operators.forEach((button) => {
+  button.addEventListener('click', selectOperator);
+})
+
+const clear = document.querySelector('#btn-clear');
+clear.addEventListener('click', clearCalculator);
 
 const equals = document.querySelector('#btn-equals');
 equals.addEventListener('click', equalsFunction);
