@@ -150,6 +150,8 @@ let opFunction = function() {
 
     firstNum = parseFloat(displayString);
     displayString = "";
+    
+    return;
   }
   
   // switch operators
@@ -157,6 +159,11 @@ let opFunction = function() {
   // chain operators
 
   // toggle/unselect operator
+  if(this === opElement) {
+    deselectOperator();
+    displayString = firstNum;
+    firstNum = "";
+  }
 
 }
 
