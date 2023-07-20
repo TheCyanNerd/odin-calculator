@@ -92,10 +92,24 @@ let writeButtonToDisplay = function() {
   updateDisplay();
 }
 
-// displayToFirstNum saves contents of display as the first operand
-let displayToFirstNum = function() {
-  firstNum = parseFloat(displayString);
-  displayString = "";
+// displayToNum saves contents of display into the specified storage variable
+let displayToNum = function(variable) {
+  switch(variable) {
+    case 'firstNum': {
+      firstNum = parseFloat(displayString);
+      displayString = "";
+      return;
+    }
+    case 'secondNum': {
+      secondNum = parseFloat(displayString);
+      displayString = "";
+      return;
+    }
+    default: {
+      console.log("No such variable to store to.");
+      return;
+    }
+  }
 }
 
 // firstNumToDisplay sends contents of firstNum to display without saving a copy
@@ -159,7 +173,7 @@ let opFunction = function() {
   // start of calculation
   if(!operator) {
     selectOperator(this);
-    displayToFirstNum();
+    displayToNum('firstNum');
     return;
   }
   
