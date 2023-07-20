@@ -135,15 +135,25 @@ let equalsFunction = function() {
 
 // opFunction handles all functionality for selecting and chaining operators
 let opFunction = function() {
+
+  // empty calculator
   if(!operator && !displayString)
     return 0;
   
+  // start of calculation
   if(!operator) {
     selectOperator(this);
 
     firstNum = parseFloat(displayString);
     displayString = "";
   }
+  
+  // switch operators
+
+  // chain operators
+
+  // toggle/unselect operator
+
 }
 
 
