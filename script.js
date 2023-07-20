@@ -98,6 +98,12 @@ let displayToFirstNum = function() {
   displayString = "";
 }
 
+// firstNumToDisplay sends contents of firstNum to display without saving a copy
+let firstNumToDisplay = function() {
+  displayString = firstNum;
+  firstNum = "";
+}
+
 // selectOperator saves the current display value and picks an operator
 //   to use for the next calculation
 let selectOperator = function(op) {
@@ -167,10 +173,7 @@ let opFunction = function() {
   // toggle/unselect operator
   if(this === opElement) {
       deselectOperator();
-      
-      displayString = firstNum;
-      firstNum = "";
-
+      firstNumToDisplay();
       return;
   }
   
