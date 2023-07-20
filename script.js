@@ -155,15 +155,19 @@ let opFunction = function() {
   }
   
   // switch operators
+  if(this !== opElement) {
+    deselectOperator();
+    selectOperator(this);
+  } else {
+  // toggle/unselect operator
+    if(this === opElement) {
+      deselectOperator();
+      displayString = firstNum;
+      firstNum = "";
+    }
+  }
 
   // chain operators
-
-  // toggle/unselect operator
-  if(this === opElement) {
-    deselectOperator();
-    displayString = firstNum;
-    firstNum = "";
-  }
 
 }
 
