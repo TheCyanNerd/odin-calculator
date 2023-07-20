@@ -92,6 +92,12 @@ let writeButtonToDisplay = function() {
   updateDisplay();
 }
 
+// displayToFirstNum saves contents of display as the first operand
+let displayToFirstNum = function() {
+  firstNum = parseFloat(displayString);
+  displayString = "";
+}
+
 // selectOperator saves the current display value and picks an operator
 //   to use for the next calculation
 let selectOperator = function(op) {
@@ -147,10 +153,7 @@ let opFunction = function() {
   // start of calculation
   if(!operator) {
     selectOperator(this);
-
-    firstNum = parseFloat(displayString);
-    displayString = "";
-    
+    displayToFirstNum();
     return;
   }
   
