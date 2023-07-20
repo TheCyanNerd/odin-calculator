@@ -76,6 +76,8 @@ const digits = document.querySelectorAll('.digit');
 const clear = document.querySelector('#btn-clear');
 const equals = document.querySelector('#btn-equals');
 
+let opElement = undefined;
+
 
 // BUTTON FUNCTIONS
 
@@ -95,12 +97,14 @@ let writeButtonToDisplay = function() {
 let selectOperator = function(op) {
   op.classList.add('selected');
   operator = op.innerText;
+  opElement = op;
 }
 
 // deselectOperator unselects operator visually and in storage
 let deselectOperator = function() {
   operators.forEach((item) => item.classList.remove('selected'));
   operator = "";
+  opElement = undefined;
 }
 
 // clearCalculator wipes out all existing data and empties the display
