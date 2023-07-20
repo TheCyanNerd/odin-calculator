@@ -158,15 +158,19 @@ let opFunction = function() {
   if(this !== opElement) {
     deselectOperator();
     selectOperator(this);
-  } else {
-  // toggle/unselect operator
-    if(this === opElement) {
-      deselectOperator();
-      displayString = firstNum;
-      firstNum = "";
-    }
+    return;
   }
 
+  // toggle/unselect operator
+  if(this === opElement) {
+      deselectOperator();
+      
+      displayString = firstNum;
+      firstNum = "";
+
+      return;
+  }
+  
   // chain operators
 
 }
