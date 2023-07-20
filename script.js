@@ -92,12 +92,9 @@ let writeButtonToDisplay = function() {
 
 // selectOperator saves the current display value and picks an operator
 //   to use for the next calculation
-let selectOperator = function() {
-  this.classList.add('selected');
-  operator = this.innerText;
-
-  firstNum = parseFloat(displayString);
-  displayString = "";
+let selectOperator = function(op) {
+  op.classList.add('selected');
+  operator = op.innerText;
 }
 
 // deselectOperator unselects operator visually and in storage
@@ -136,6 +133,14 @@ let equalsFunction = function() {
   }
 }
 
+// opFunction handles all functionality for selecting and chaining operators
+let opFunction = function() {
+  selectOperator(this);
+
+  firstNum = parseFloat(displayString);
+  displayString = "";
+}
+
 
 
 // BUTTON EVENT LISTENERS
@@ -145,7 +150,7 @@ digits.forEach((button) => {
 });
 
 operators.forEach((button) => {
-  button.addEventListener('click', selectOperator);
+  button.addEventListener('click', opFunction);
 })
 
 clear.addEventListener('click', clearCalculator);
