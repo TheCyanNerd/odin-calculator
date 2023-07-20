@@ -135,10 +135,15 @@ let equalsFunction = function() {
 
 // opFunction handles all functionality for selecting and chaining operators
 let opFunction = function() {
-  selectOperator(this);
+  if(!operator && !displayString)
+    return 0;
+  
+  if(!operator) {
+    selectOperator(this);
 
-  firstNum = parseFloat(displayString);
-  displayString = "";
+    firstNum = parseFloat(displayString);
+    displayString = "";
+  }
 }
 
 
