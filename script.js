@@ -112,10 +112,24 @@ let displayToNum = function(variable) {
   }
 }
 
-// firstNumToDisplay sends contents of firstNum to display without saving a copy
-let firstNumToDisplay = function() {
-  displayString = firstNum;
-  firstNum = "";
+// numToDisplay sends contents of provided var to display without saving a copy
+let numToDisplay = function(variable) {
+  switch(variable) {
+    case 'firstNum': {
+      displayString = firstNum;
+      firstNum = "";
+      return;
+    }
+    case 'secondNum': {
+      displayString = secondNum;
+      secondNum = "";
+      return;
+    }
+    default: {
+      console.log("No such variable to retrieve from.");
+      return;
+    }
+  }
 }
 
 // selectOperator saves the current display value and picks an operator
@@ -187,7 +201,7 @@ let opFunction = function() {
   // toggle/unselect operator
   if(this === opElement) {
       deselectOperator();
-      firstNumToDisplay();
+      numToDisplay('firstNum');
       return;
   }
   
