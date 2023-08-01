@@ -164,12 +164,12 @@ let equalsFunction = function() {
     // do nothing
   } else {
     // perform the operation
-    secondNum = parseFloat(displayString);
+    displayToNum('secondNum');
     displayString = operate(firstNum, operator, secondNum);
     updateDisplay();
 
     // update data vars
-    firstNum = parseFloat(displayString);
+    firstNum = parseFloat(displayString);     // can't use displayToNum('firstNum') here bc that would reset the screen for typing
     secondNum = "";
 
     // deselect the operator
@@ -207,7 +207,7 @@ let opFunction = function() {
   
   // chain operators
   if(operator && displayString && firstNum) {
-    secondNum = parseFloat(displayString);
+    displayToNum('secondNum');
     displayString = operate(firstNum, operator, secondNum);
     updateDisplay();
 
