@@ -166,7 +166,15 @@ let equalsFunction = function() {
     // perform the operation
     displayToNum('secondNum');
     displayString = operate(firstNum, operator, secondNum);
-    updateDisplay();
+    updateDisplay();  
+    
+    if(displayString === "BOOM") {
+      displayString = "";
+      firstNum = "";
+      secondNum = "";
+      deselectOperator();
+      return;
+    }
 
     // update data vars
     firstNum = parseFloat(displayString);     // can't use displayToNum('firstNum') here bc that would reset the screen for typing
@@ -210,6 +218,14 @@ let opFunction = function() {
     displayToNum('secondNum');
     displayString = operate(firstNum, operator, secondNum);
     updateDisplay();
+    
+    if(displayString === "BOOM") {
+      displayString = "";
+      firstNum = "";
+      secondNum = "";
+      deselectOperator();
+      return;
+    }
 
     deselectOperator();
     selectOperator(this);
