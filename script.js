@@ -192,20 +192,29 @@ let opFunction = function() {
   }
   
   // switch operators
-  if(this !== opElement) {
+  if((this !== opElement) && !displayString) {
     deselectOperator();
     selectOperator(this);
     return;
   }
 
   // toggle/unselect operator
-  if(this === opElement) {
+  if((this === opElement) && !displayString) {
       deselectOperator();
       numToDisplay('firstNum');
       return;
   }
   
   // chain operators
+  if(operator && displayString && firstNum) {
+    secondNum = parseFloat(displayString);
+    displayString = operate(firstNum, operator, secondNum);
+    updateDisplay();
+
+    deselectOperator();
+    selectOperator(this);
+    displayToNum('firstNum');
+  }
 
 }
 
