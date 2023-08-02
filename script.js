@@ -177,7 +177,7 @@ let equalsFunction = function() {
     }
 
     // update data vars
-    firstNum = parseFloat(displayString);     // can't use displayToNum('firstNum') here bc that would reset the screen for typing
+    firstNum = parseFloat(displayString);     // can't use displayToNum('firstNum') here bc it erases the screen contents
     secondNum = "";
 
     // deselect the operator
