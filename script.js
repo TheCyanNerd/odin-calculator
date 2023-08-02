@@ -127,12 +127,12 @@ let displayToNum = function(variable) {
 let numToDisplay = function(variable) {
   switch(variable) {
     case 'firstNum': {
-      displayString = firstNum;
+      displayString = firstNum + "";
       firstNum = "";
       return;
     }
     case 'secondNum': {
-      displayString = secondNum;
+      displayString = secondNum + "";
       secondNum = "";
       return;
     }
@@ -176,7 +176,7 @@ let equalsFunction = function() {
   } else {
     // perform the operation
     displayToNum('secondNum');
-    displayString = operate(firstNum, operator, secondNum);
+    displayString = operate(firstNum, operator, secondNum) + "";
     updateDisplay();  
     
     if(displayString === "BOOM") {
@@ -227,7 +227,7 @@ let opFunction = function() {
   // chain operators
   if(operator && displayString && (firstNum !== '')) {
     displayToNum('secondNum');
-    displayString = operate(firstNum, operator, secondNum);
+    displayString = operate(firstNum, operator, secondNum) + "";
     updateDisplay();
     
     if(displayString === "BOOM") {
