@@ -77,6 +77,7 @@ const clear = document.querySelector('#btn-clear');
 const equals = document.querySelector('#btn-equals');
 
 const decimal = document.querySelector('#btn-decimal');
+const backspace = document.querySelector('#btn-del');
 
 let opElement = undefined;
 
@@ -256,4 +257,9 @@ decimal.addEventListener('click', () => {
     displayString += '.';
     updateDisplay();
   }
+});
+
+backspace.addEventListener('click', () => {
+  displayString = displayString.slice(0, (displayString.length-1));
+  updateDisplay();
 });
