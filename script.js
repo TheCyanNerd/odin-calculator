@@ -82,10 +82,18 @@ const backspace = document.querySelector('#btn-del');
 let opElement = undefined;
 
 
+// NUMERIC CONSTANTS
+
+const DISPLAY_MAX_LEN = 11;
+
+
 // BUTTON FUNCTIONS
 
 // updateDisplay replaces current contents of display with the contents of displayString
 let updateDisplay = function() {
+  if(displayString.length > DISPLAY_MAX_LEN) {
+    displayString = displayString.slice(0, DISPLAY_MAX_LEN);
+  }
   displayContent.innerText = displayString;
 }
 
