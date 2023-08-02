@@ -162,7 +162,7 @@ let clearCalculator = function() {
 
 // equalsFunction handles everything that occurs after pressing the equals sign
 let equalsFunction = function() {
-  if(!firstNum || !operator) {
+  if((firstNum === '') || !operator) {
     // do nothing
   } else {
     // perform the operation
@@ -216,7 +216,7 @@ let opFunction = function() {
   }
   
   // chain operators
-  if(operator && displayString && firstNum) {
+  if(operator && displayString && (firstNum !== '')) {
     displayToNum('secondNum');
     displayString = operate(firstNum, operator, secondNum);
     updateDisplay();
