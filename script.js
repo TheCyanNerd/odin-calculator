@@ -76,6 +76,8 @@ const digits = document.querySelectorAll('.digit');
 const clear = document.querySelector('#btn-clear');
 const equals = document.querySelector('#btn-equals');
 
+const decimal = document.querySelector('#btn-decimal');
+
 let opElement = undefined;
 
 
@@ -248,3 +250,10 @@ operators.forEach((button) => {
 
 clear.addEventListener('click', clearCalculator);
 equals.addEventListener('click', equalsFunction);
+
+decimal.addEventListener('click', () => {
+  if(displayString.indexOf('.') == -1) {
+    displayString += '.';
+    updateDisplay();
+  }
+});
